@@ -39,3 +39,12 @@ def generer_mot(probabilites, longueur_mot):
         mot += suivant
 
     return mot[:longueur_mot]
+
+chemin_fichier_txt = 'mots.txt'
+
+mots = lire_fichier(chemin_fichier_txt)
+tableau_occurrences = construire_tableau_occurrences(mots)
+probabilites_paires = calculer_probabilites(tableau_occurrences)
+mot_genere = generer_mot(probabilites_paires, nombre_aleatoire)  
+
+print('Mot généré',mot_genere)
