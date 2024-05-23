@@ -24,7 +24,7 @@ def calculer_probabilites(paires): #fonction qui calcul la probabilité
     probabilites = {}
     for paire in paires:
         probabilites[paire] = paires[paire] / total_paires
-    return probabilite
+    return probabilites
 
 def generer_mot(probabilites, longueur_mot):
     # Extraire les paires et les probabilités des dictionnaires
