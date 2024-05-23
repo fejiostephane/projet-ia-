@@ -9,3 +9,11 @@ def lire_fichier(chemin_fichier):  # fonction permetant la lecture du fichier.tx
         texte = fichier.read()
         mots = texte.split()
     return mots
+
+def construire_tableau_occurrences(mots): # fonction qui calcul l'occurence 
+    paires = Counter()
+    for mot in mots:
+        for i in range(len(mot) - 1):
+            paire = mot[i:i+2]
+            paires[paire] += 1
+    return paires
