@@ -17,3 +17,10 @@ def construire_tableau_occurrences(mots): # fonction qui calcul l'occurence
             paire = mot[i:i+2]
             paires[paire] += 1
     return paires
+
+def calculer_probabilites(paires): #fonction qui calcul la probabilité
+    total_paires = sum(paires.values())
+    probabilites = {}
+    for paire in paires:
+        probabilites[paire] = paires[paire] / total_paires
+    return probabilite
