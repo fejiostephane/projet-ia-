@@ -25,3 +25,17 @@ def calculer_probabilites(paires): #fonction qui calcul la probabilité
     for paire in paires:
         probabilites[paire] = paires[paire] / total_paires
     return probabilite
+
+def generer_mot(probabilites, longueur_mot):
+    # Extraire les paires et les probabilités des dictionnaires
+    paires = list(probabilites.keys())
+    probs = list(probabilites.values())
+
+    # Choisir la première paire aléatoirement selon les probabilités
+    mot = random.choices(paires, probs)[0]
+    # Continuer à ajouter des lettres jusqu'à atteindre la longueur souhaitée
+    while len(mot) < longueur_mot:
+        suivant = random.choices(paires, probs)[0][1]
+        mot += suivant
+
+    return mot[:longueur_mot]
